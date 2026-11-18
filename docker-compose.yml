@@ -15,7 +15,8 @@ services:
       - CELERY_RESULT_BACKEND=redis://redis:6379/0
       - REDIS_STORAGE_URL=redis://redis:6379/1
     volumes:
-      - ./baza_hr_chik.db:/app/baza_hr_chik.db
+      - ./data:/app/data
+      - ./temp_pdfs:/app/temp_pdfs
     depends_on:
       - redis
 
@@ -31,6 +32,7 @@ services:
       - CELERY_RESULT_BACKEND=redis://redis:6379/0
       - REDIS_STORAGE_URL=redis://redis:6379/1
     volumes:
-      - ./baza_hr_chik.db:/app/baza_hr_chik.db
+      - ./data:/app/data
+      - ./temp_pdfs:/app/temp_pdfs
     depends_on:
       - redis
