@@ -64,6 +64,16 @@ async def vk_callback(request: Request):
             payload = json.loads(payload_raw)
             command = payload.get("command")
 
+            if command == "start":
+                await set_user_state(user_id, "MAIN_MENU")
+                welcome_text = (
+                    "Привет! Начнем работу. Сначала авторизуемся.\n\n"
+                    "А вот тестовый ключ для пользователя: key_1794897643_392\n\n"
+
+                )
+                await send_vk_message(user_id, welcome_text, keyboard_main)
+                return Response(content="ok")
+
             if command == "vhod_hr":
                 await set_user_state(user_id, "HR_VVOD_KLUCHA")
                 await send_vk_message(user_id, "Введите ваш ключ")
