@@ -95,7 +95,7 @@ graph LR
 ### Способ 1. Через Docker Compose (рекомендуется)
 1. Клонируйте репозиторий и перейдите в директорию проекта:
    ```bash
-   git clone https://github.com
+   git clone https://github.com/chivapshisch/hr-assistant-vk-bot
    cd hr-assistant-vk-bot
    ```
 2. Создайте файл `.env` на основе `.env.example` и укажите ваши токены VK и Yandex Cloud:
